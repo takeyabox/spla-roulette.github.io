@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>splatoonブキルーレット</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Load data first -->
+    <script src="data.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>splatoonブキルーレット
+            </h1>
+        </header>
+
+        <main>
+            <section class="filters">
+                <div class="filter-group">
+                    <label>WEAPONS</label>
+                    <div id="type-options" class="options-container"></div>
+                </div>
+
+                <div class="filter-group">
+                    <label>SUB</label>
+                    <div id="sub-options" class="options-container"></div>
+                </div>
+
+                <div class="filter-group">
+                    <label>SPECIAL</label>
+                    <div id="special-options" class="options-container"></div>
+                </div>
+            </section>
+
+            <section class="roulette-display">
+                <div id="result-card" class="weapon-card">
+                    <div class="weapon-name" id="weapon-name">???</div>
+                    <div class="weapon-details">
+                        <div class="detail-item">
+                            <span class="label">Sub:</span>
+                            <span class="value" id="weapon-sub">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Special:</span>
+                            <span class="value" id="weapon-special">-</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="controls">
+                <button id="spin-btn" class="btn primary">SPIN!</button>
+                <button id="reset-btn" class="btn secondary">RESET FILTER</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
