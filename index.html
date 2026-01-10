@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>splatoonブキルーレット</title>
+    <title>Splatoon Weapons Roulette</title>
     <link rel="stylesheet" href="style.css">
     <!-- Load data first -->
     <script src="data.js"></script>
@@ -13,14 +13,14 @@
 <body>
     <div class="container">
         <header>
-            <h1>splatoonブキルーレット
+            <h1>Splatoon Weapons Roulette
             </h1>
         </header>
 
         <main>
             <section class="filters">
                 <div class="filter-group">
-                    <label>WEAPONS</label>
+                    <label>MAIN</label>
                     <div id="type-options" class="options-container"></div>
                 </div>
 
@@ -33,21 +33,19 @@
                     <label>SPECIAL</label>
                     <div id="special-options" class="options-container"></div>
                 </div>
+                <div class="filter-group">
+                    <label>PLAYERS</label>
+                    <div class="player-control-wrapper">
+                        <button id="p-minus" class="mini-btn">-</button>
+                        <input type="number" id="player-count" class="player-input" min="1" max="8" value="1" readonly>
+                        <button id="p-plus" class="mini-btn">+</button>
+                    </div>
+                </div>
             </section>
 
             <section class="roulette-display">
-                <div id="result-card" class="weapon-card">
-                    <div class="weapon-name" id="weapon-name">???</div>
-                    <div class="weapon-details">
-                        <div class="detail-item">
-                            <span class="label">Sub:</span>
-                            <span class="value" id="weapon-sub">-</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="label">Special:</span>
-                            <span class="value" id="weapon-special">-</span>
-                        </div>
-                    </div>
+                <div id="results-grid" class="results-grid">
+                    <!-- Cards will be generated here -->
                 </div>
             </section>
 

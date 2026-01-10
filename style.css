@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'SplatoonEN';
+    src: url('font_english.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SplatoonJP';
+    src: url('font_japanese.ttf') format('truetype');
+}
+
 :root {
     --splat-green: #2aff00;
     --splat-pink: #f6007b;
@@ -14,8 +24,15 @@
     padding: 0;
 }
 
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'SplatoonEN', 'SplatoonJP', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-dark);
     color: var(--text-light);
     background-image:
@@ -287,4 +304,90 @@ header h1 {
     100% {
         transform: translate(0)
     }
+}
+
+/* Update for Grid Layout */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.weapon-card {
+    /* Reset margins if they interfere */
+    margin: 0;
+    min-height: 220px;
+    height: 100%;
+}
+
+/* Player Input Style */
+.player-control-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.player-input {
+    background: var(--card-bg);
+    border: 1px solid #666;
+    color: white;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    width: 60px;
+    border-radius: 10px;
+    text-align: center;
+    -moz-appearance: textfield;
+    /* Remove spinner firefox */
+    appearance: textfield;
+    /* Standard property */
+}
+
+.player-input::-webkit-outer-spin-button,
+.player-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.mini-btn {
+    background: var(--card-bg);
+    border: 2px solid var(--splat-yellow);
+    color: var(--splat-yellow);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.mini-btn:hover {
+    background: var(--splat-yellow);
+    color: var(--bg-dark);
+}
+
+.mini-btn:active {
+    transform: scale(0.9);
+}
+
+.player-label {
+    background: var(--splat-green);
+    color: var(--bg-dark);
+    font-weight: bold;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.player-input:focus {
+    outline: none;
+    border-color: var(--splat-yellow);
+    box-shadow: 0 0 10px rgba(234, 255, 0, 0.3);
 }
